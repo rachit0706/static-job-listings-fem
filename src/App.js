@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import JobCard from './Components/JobCard';
+
+const DATA = require('./data.json');
 
 function App() {
+  // console.log(DATA);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{backgroundImage: `url(./images/bg-header-desktop.svg)`, backgroundRepeat: "no-repeat"}}>
+      {DATA.map(card => <JobCard cardData={card}/>)}
     </div>
   );
 }

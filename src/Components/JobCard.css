@@ -1,0 +1,40 @@
+.job-card {
+    margin: 0 auto 1rem auto;
+    width: 80%;
+    height: auto;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-logo {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin: 0 1rem;
+}
+
+.designation {
+    font-size: 18px;
+    font-weight: 1000;
+}
+
+.company {
+    font-size: 16px;
+    color:  hsl(180, 52%, 38%);
+    font-weight: 1000;
+}
+
+.mute {
+    font-size: 13px;
+    font-weight: 600;
+    color: hsl(180, 8%, 52%)
+}
+
+.category {
+    margin: 0 0.5rem 0 0;
+}
