@@ -4,40 +4,45 @@ import React, { useState } from "react";
 import "./JobCard.css";
 import { styled } from '@mui/material/styles';
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
+const Bubble = ({ label }) => {
+    return (
+        <Box className="category" sx={{ }}>{label}</Box>
+    );
+}
 
 export default function JobCard({ cardData }) {
+    const newNFeaturedStyle = {
+        fontSize: '13px',
+        color: "white",
+        fontWeight: "700",
+        padding: "0",
+        height: "1.2rem",
+    }
 
     return (
-        <Box sx={{ flexGrow: 1 }} className="job-card">
-            <Stack direction="row" spacing={1} sx={{alignItems: "center", flexWrap: "wrap"}} key={cardData.id}>
+        <Box sx={{ flexGrow: 1 }} className={cardData.featured ? "job-card featuredCard" : "job-card"} key={cardData.id}>
+            <Box className="left-part" >
                 <img alt="#" src={cardData.logo} className="card-logo" />
-                <Stack spacing={2} sx={{ padding: "8px" }}>
-                    <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
+                <Stack spacing={2} sx={{ padding: "8px"}}>
+                    <Stack direction="row" spacing={1} sx={{ alignItems: "center", flexWrap: "wrap" }}>
                         <span className="company">{cardData.company}</span>
-                        {cardData.new && (<Chip label="New!" sx={{ backgroundColor: "hsl(180, 29%, 50%)", color: "white", fontSize: "13px", fontWeight: "700", padding: "0", height: "1.2rem" }} />)}
-                        {cardData.featured && (<Chip label="Featured" sx={{ backgroundColor: "black", color: "white", fontSize: "13px", fontWeight: "700", padding: "0", height: "1.2rem" }} />)}
+                        {cardData.new && (<Chip label="New!" sx={{ backgroundColor: "hsl(180, 29%, 50%)", ...newNFeaturedStyle }} />)}
+                        {cardData.featured && (<Chip label="Featured" className="featured" backColor="black" sx={{ backgroundColor: "black", ...newNFeaturedStyle }} />)}
                     </Stack>
-                    <h1 className="designation">{cardData.position}</h1>
-                    <Stack direction="row" sx={{ justifyContent: "space-between", width: "10rem" }}>
+                    <p className="designation">{cardData.position}</p>
+                    <Stack direction="row" sx={{ justifyContent: "space-between", flexWrap: "wrap" , width: "10rem" }}>
                         <span className="mute">{cardData.postedAt}</span>
                         <span className="mute">{cardData.contract}</span>
                         <span className="mute">{cardData.location}</span>
                     </Stack>
                 </Stack>
-            </Stack>
-            <Stack direction="row" spacing={1} p={2} sx={{flexWrap: "wrap"}}>
-                <Chip label={cardData.role} className="category" />
-                <Chip label={cardData.level} className="category" />
-                {cardData.languages.map(language => <Chip label={language} className="category" />)}
-                {cardData.tools.map(tool => <Chip label={tool} className="category" />)}
-            </Stack>
+            </Box>
+            <Box className="categories">
+                <Bubble label={cardData.role} />
+                <Bubble label={cardData.level} />
+                {cardData.languages.map(language => <Bubble label={language} />)}
+                {cardData.tools.map(tool => <Bubble label={tool} />)}
+            </Box>
         </Box>
     );
 }

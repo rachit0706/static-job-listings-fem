@@ -1,5 +1,6 @@
 import React from 'react';
 import JobCard from './Components/JobCard';
+import "./App.css"
 
 const DATA = require('./data.json');
 
@@ -7,8 +8,13 @@ function App() {
   // console.log(DATA);
 
   return (
-    <div className="App" style={{backgroundImage: `url(./images/bg-header-desktop.svg)`, backgroundRepeat: "no-repeat"}}>
-      {DATA.map(card => <JobCard cardData={card}/>)}
+    <div className="App">
+      <div className='app-upper'></div>
+      <div className='app-bottom'>
+        <div className='listing-area'>
+          {DATA.map(card => <JobCard cardData={card} />)}
+        </div>
+      </div>
     </div>
   );
 }
