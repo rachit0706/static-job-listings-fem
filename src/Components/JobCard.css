@@ -5,7 +5,6 @@
     --very-dark-grayish-cyan: hsl(180, 14%, 20%);
 }
 
-
 .job-card {
     width: 70%;
     height: auto;
@@ -37,7 +36,7 @@
 }
 
 .designation {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 1000;
 }
 
@@ -47,7 +46,7 @@
 }
 
 .company {
-    font-size: 16px;
+    font-size: 15px;
     color: hsl(180, 52%, 38%);
     font-weight: 1000;
 }

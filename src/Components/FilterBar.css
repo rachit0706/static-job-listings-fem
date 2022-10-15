@@ -1,0 +1,73 @@
+:root {
+    --dark-saturated-cyan: hsl(180, 29%, 50%);
+    --light-grayish-cyan: hsl(180, 52%, 96%);
+    --dark-grayish-cyan: hsl(180, 8%, 52%);
+    --very-dark-grayish-cyan: hsl(180, 14%, 20%);
+}
+
+
+.filter-bar {
+    margin: -1.7rem auto 0 auto;
+    width: 70%;
+    min-height: 2rem;
+    border: 1px solid var(--light-grayish-cyan);
+    border-radius: 4px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+.filter-tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid var(--light-grayish-cyan);
+    margin: 0.5rem;
+    overflow: hidden;
+}
+
+.filter-text, .cross {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-text {
+    height: auto;
+    padding: 0.5rem;
+    color: var(--dark-saturated-cyan);
+    background-color: var(--light-grayish-cyan);
+}
+
+.cross {
+    height: 100%;
+    width: 2rem;
+    background-color: var(--dark-saturated-cyan);
+}
+
+.cross::before {
+    content: url('/images/icon-remove.svg');
+}
+
+.cross:hover {
+    background-color: var(--very-dark-grayish-cyan);
+    cursor: pointer;
+}
+
+.clear-button {
+    color: var(--very-dark-grayish-cyan);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.clear-button:hover {
+    color: var(--dark-saturated-cyan);
+    text-decoration: underline;
+    cursor: pointer;
+}

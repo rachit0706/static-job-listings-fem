@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
 
-:root {
-  --dark-saturated-cyan: hsl(180, 29%, 50%);
-  --light-grayish-cyan: hsl(180, 52%, 96%);
-  --dark-grayish-cyan: hsl(180, 8%, 52%);
-  --very-dark-grayish-cyan: hsl(180, 14%, 20%);
-}
-
 body {
   margin: 0;
   font-family: 'League Spartan', 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,9 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: hsl(180, 52%, 96%); */
-  background: linear-gradient( var(--dark-saturated-cyan) 100, url('/images/bg-header-desktop.svg'));
-  background-size: 100%, 100px;
-  background-repeat: no-repeat;
+  font-size: 15px;
 }
 
 code {
