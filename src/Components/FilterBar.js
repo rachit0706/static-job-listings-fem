@@ -1,5 +1,5 @@
-import { Box, IconButton, Stack, Typography } from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close';
+import { Box, Stack, Typography } from "@mui/material";
+// import CloseIcon from '@mui/icons-material/Close';
 import React from "react";
 import "./FilterBar.css";
 
